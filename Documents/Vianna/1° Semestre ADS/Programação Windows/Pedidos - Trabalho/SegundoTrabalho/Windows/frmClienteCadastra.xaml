@@ -1,0 +1,21 @@
+﻿<Window x:Class="SegundoTrabalho.Windows.frmClienteCadastra"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SegundoTrabalho.Windows"
+        mc:Ignorable="d"
+        Title="frmClienteCadastra" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Command="{Binding SalvarCommand}" Width="100">Salvar</Button>
+            <Button Command="{Binding FecharCommand}" Width="100">Fechar</Button>
+        </StackPanel>
+        <StackPanel Name="panelCampos">
+            <Label>Nome:</Label>
+            <TextBox Text="{Binding Path=ObjetoCadastro.Nome}" IsEnabled="{Binding Path=HabilitarEdicao}"></TextBox>
+            <Label Content="Email:"/>
+            <TextBox Text="{Binding Path=ObjetoCadastro.Email}" IsEnabled="{Binding Path=HabilitarEdicao}"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

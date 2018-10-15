@@ -1,0 +1,25 @@
+﻿<Window x:Class="TesteWpf.Views.frmAtletaLista"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TesteWpf.Views"
+        mc:Ignorable="d"
+        Title="{Binding Path=NomeEntidadePlural, StringFormat='Lista de {0}'}" Height="450" Width="800">
+    <StackPanel>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Command="{Binding Path=AbrirConsultarCommand}" Width="100">Consultar</Button>
+                <Button Command="{Binding Path=AbrirInserirCommand}" Width="100">Inserir</Button>
+                <Button Command="{Binding Path=AbrirAlterarCommand}" Width="100">Alterar</Button>
+                <Button Command="{Binding Path=ExcluirCommand}" Width="100">Excluir</Button>
+            </StackPanel>
+            <DataGrid ItemsSource="{Binding Lista}" AutoGenerateColumns="False"  IsReadOnly="True"  SelectedItem="{Binding ObjetoSelecionado}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"/>
+                    <DataGridTextColumn Header="Altura" Binding="{Binding Altura, StringFormat=N2}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </StackPanel>
+</Window>

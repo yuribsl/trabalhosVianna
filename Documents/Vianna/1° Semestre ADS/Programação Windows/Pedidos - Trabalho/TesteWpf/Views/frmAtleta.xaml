@@ -1,0 +1,21 @@
+﻿<Window x:Class="TesteWpf.Views.frmAtleta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TesteWpf.Views"
+        mc:Ignorable="d"
+        Title="{Binding Path=NomeEntidade}" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Command="{Binding Path=SalvarCommand}" Width="100">Salvar</Button>
+            <Button Command="{Binding Path=FecharTelaCommand}" Width="100">Fechar</Button>
+        </StackPanel>
+        <StackPanel Name="pnlCampos">
+            <Label>Nome:</Label>
+            <TextBox Text="{Binding Path=ObjetoCadastro.Nome}" IsEnabled="{Binding Path=HabilitarEdicao}"></TextBox>
+            <Label>Altura:</Label>
+            <TextBox Text="{Binding Path=ObjetoCadastro.Altura, StringFormat=N2}" IsEnabled="{Binding Path=HabilitarEdicao}"></TextBox>
+        </StackPanel>
+    </StackPanel>
+</Window>
